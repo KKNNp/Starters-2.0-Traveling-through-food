@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step 4</title>    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Step 4</title>
     <link rel="stylesheet" href="./step4.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <p class="direction">Pop the rising bubbles</p>
     <div class="bubble b1"></div>
     <div class="bubble b2"></div>
     <div class="bubble b3"></div>
@@ -24,6 +25,8 @@
 
     <script>
       $(document).ready(function () {
+          $('.direction').delay(3000).fadeIn();
+
           $audio1 = new
           Audio('./sound/4_SE_Tandoor_bubble.mp3');
           $audio1.play();
@@ -46,6 +49,7 @@
             if ($count === 7) {
               $audio1.pause();
               $audio2.pause();
+              $('.direction').hide();
               $('body').addClass('on');
               $('.wagafi').css({ 'display': 'block', 'z-index': 100 });
               $audio.play();

@@ -30,6 +30,21 @@ body.on::after {
 	width: 100%;
 }
 
+.direction{
+	display:none;
+  opacity:0.75;
+  z-index:10;
+  position:absolute;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:20px;
+  background-color:#fff;
+  font-size:20px;
+  animation: blink 1.5s steps(2, start) infinite;
+  -webkit-animation: blink 2.5s steps(2, start) infinite;
+}
+
 .bubble {
 	position: absolute;
 	width: 10em;
@@ -121,6 +136,7 @@ body.on::after {
 
 .wagafi .next_btn {
 	display: none;
+	opacity:0.75;
 	position: absolute;
 	bottom: -90px;
 	left: 50%;
@@ -131,7 +147,6 @@ body.on::after {
 	color: #333333;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
 	font-size: 20px;
 	animation: blink 1.5s steps(2, start) infinite;
   -webkit-animation: blink 2.5s steps(2, start) infinite;

@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Step 3</title>
+  <link rel="stylesheet" href="./step3.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./step3.css">
 </head>
 <body>
+  <p class="direction direction1">Make your dough</p>
+  <p class="direction direction2">Put your dough in the Tandoor</p>
   <div class="bg">
     <div class="carpet">
       <div class="el el1"></div>
@@ -24,6 +26,8 @@
 
   <script>
     $(document).ready(function(){
+      $('.direction1').delay(3000).fadeIn();
+
       $('.el1').click(function(){
         $(this).hide();
         $('.el2').show();
@@ -44,6 +48,8 @@
 
       $('.el4').click(function(){
         $(this).hide();
+        $('.direction1').hide();
+        $('.direction2').show();
         $('.el5').show();
         $('.tandor').delay(500).queue(function (next) {
           $(this).css({ 'display': 'block' });

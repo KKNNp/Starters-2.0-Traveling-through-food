@@ -9,6 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
+  <p class="direction">Enjoy your Wagafi Bread</p>
   <div class="wrap">
     <div class="bread bread1"></div>
     <div class="bread bread2"></div>
@@ -20,6 +21,8 @@
 
   <script>
     $(document).ready(function () {
+      $('.direction').delay(3000).fadeIn();
+      
       $audio1 = new
       Audio('./sound/6_SE_eating_cut.mp3');
       
@@ -44,6 +47,7 @@
 
       $('.bread4').click(function(){
         $(this).hide();
+        $('.direction').hide();
         $('.txt').show();
         return false;
       });
