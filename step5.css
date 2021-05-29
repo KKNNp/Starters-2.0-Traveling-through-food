@@ -1,0 +1,53 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.wrap{
+  width:100%;
+  height:100vh;
+  background-color:white;
+}
+
+.bread{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  width:400px;
+  height:400px;
+  cursor:pointer;
+}
+
+.bread1{
+  background:url(./img/6_wagafi.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.bread2{
+  display:none;
+  background:url(./img/6_wagafi1.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.bread3{
+  display:none;
+  background:url(./img/6_wagafi2.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.bread4{
+  display:none;
+  background:url(./img/6_wagafi3.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.txt{  
+  display:none;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  font-size:50px;
+  letter-spacing:0.4em;
+}

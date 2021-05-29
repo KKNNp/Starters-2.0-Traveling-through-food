@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	background-image: url(./img/4_BG.png);
+	background-position: 0 0;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+body::after {
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	content: '';
+}
+
+body.on::after {
+	opacity: 1;
+	width: 100%;
+}
+
+.bubble {
+	position: absolute;
+	width: 10em;
+	height: 10em;	
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+	box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.4), inset 1em 1em 1em rgba(255, 255, 255, 0.6), 0 1em 2em rgba(0, 0, 0, 0.25);
+}
+
+.b1 {	
+	animation: floatup 10s linear infinite, sideways 5s ease-in-out infinite alternate;
+	left: 10%;
+	top: 100%;
+}
+
+.b2 {
+	animation: floatup 5s linear infinite, sideways 4s ease-in-out 1s infinite alternate;
+	left: 15%;
+	top: 30%;
+	transform: scale(1.1);
+}
+
+.b3 {
+	animation: floatup 4s linear infinite, sideways 6s ease-in-out 6s infinite alternate;
+	left: 20%;
+	transform: scale(0.9) rotate(10deg);
+}
+
+.b4 {
+	animation: floatup 6s linear infinite, sideways 5s ease-in-out 3s infinite alternate;
+	left: 25%;
+	top: 90%;
+	transform: scale(1.0);
+}
+
+.b5 {
+	animation: floatup 8s linear infinite, sideways 6s ease-in-out 3s infinite alternate;
+	left: 30%;
+ 	top: 30%;
+ 	transform: scale(1.1);
+}
+
+.b6 {
+	animation: floatup 7s linear infinite, sideways 4s ease-in-out 3.5s infinite alternate;
+	left: 40%;
+	top: 50%;
+	transform: scale(1);
+}
+
+.b7 {
+	animation: floatup 6s linear infinite, sideways 5s ease-in-out 4s infinite alternate;
+	left: 70%;
+ 	top: 90%;
+ 	transform: scale(0.9);
+}
+
+/* 애니메이션 이름 floatup */
+@keyframes floatup {
+	0% { /* 애니메이션 시작 설정값 */
+		margin-top: 50%;
+   }
+	100% { /* 애니메이션 끝 설정값 */
+		margin-top: -50%;
+   }
+}
+
+/* 애니메이션 이름 sideways */
+@keyframes sideways {
+	0% {
+		margin-left: 0em;
+   }
+	100% {
+		margin-left: 20em;
+   }
+}
+
+.wagafi {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 400px;
+	background: url(./img/5_Wagafi.png) 50% 50% no-repeat;
+	background-size: contain;
+}
+
+.wagafi .next_btn {
+	display: none;
+	position: absolute;
+	bottom: -90px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 260px;
+	padding: 20px;
+	background-color: #ffffff;
+	color: #333333;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+	animation: blink 1.5s steps(2, start) infinite;
+  -webkit-animation: blink 2.5s steps(2, start) infinite;
+}
+
+@keyframes blink {
+	to {
+		visibility: hidden;
+	}
+}
+@-webkit-keyframes blink {
+	to {
+		visibility: hidden;
+	}
+}

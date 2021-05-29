@@ -1,0 +1,85 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.bg{
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  background:url(./img/3_BG.png) 0 0 no-repeat;
+  background-size:cover;
+  overflow:hidden;
+}
+
+.carpet{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:235px;
+  background:url(./img/3_carpet.png) 0 0 no-repeat;
+  background-size:contain;
+}
+
+.el{
+  /* position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%); */
+  cursor:pointer;
+}
+
+.el1{
+  width:435px;
+  height:200px;
+  background:url(./img/3_ingredients.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.el2{
+  display:none;
+  width:200px;
+  height:200px;
+  background:url(./img/3_wheat1.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.el3{
+  display:none;
+  width:300px;
+  height:50px;
+  background:url(./img/3_wheat2.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.el4{  
+  display:none;
+  width:300px;
+  height:60px;
+  background:url(./img/3_wheat3.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.el5{
+  z-index:10;
+  display:none;
+  width:350px;
+  height:100px;
+  background:url(./img/3-1_wheat3.png) 50% 50% no-repeat;
+  background-size:contain;
+}
+
+.tandor{
+  display:none;
+  position:absolute;
+  left:50%;
+  bottom:-30px;
+  transform:translateX(-50%);
+  width:500px;
+  height:220px;
+  background:url(./img/3-1_Tandoor.png) 0 100% no-repeat;
+  background-size:contain;
+}

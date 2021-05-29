@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 3</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./step3.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="carpet">
+      <div class="el el1"></div>
+      <div class="el el2"></div>
+      <div class="el el3"></div>
+      <div class="el el4"></div>
+      <div class="el el5"></div>
+    </div>
+    <div class="tandor"></div>
+  </div>
+  <audio src="./sound/3_SE_Tandoor.mp3" tyope="audio/mp3" autoplay loop></audio>
+
+  <script>
+    $(document).ready(function(){
+      $('.el1').click(function(){
+        $(this).hide();
+        $('.el2').show();
+        return false;
+      });
+
+      $('.el2').click(function(){
+        $(this).hide();
+        $('.el3').show();
+        return false;
+      });
+
+      $('.el3').click(function(){
+        $(this).hide();
+        $('.el4').show();
+        return false;
+      });
+
+      $('.el4').click(function(){
+        $(this).hide();
+        $('.el5').show();
+        $('.tandor').delay(500).queue(function (next) {
+          $(this).css({ 'display': 'block' });
+          next();
+          });
+        // $('.tandor').show();
+        return false;
+      });
+
+      $( ".el5" ).draggable();
+      
+      $('.tandor').droppable({drop:function(event, ui){
+        $(location).attr('href', './step4.html');
+      }});
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 4</title>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./step4.css">
+</head>
+<body>
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+    <div class="bubble b6"></div>
+    <div class="bubble b7"></div>
+    <div class="wagafi">
+        <a class="next_btn" href="./step5.html" target="_self">Get Your Wagafi Bread</a>
+    </div>
+    <!-- <audio src="./sound/4_SE_Tandoor_bubble.mp3" type="audio/mp3" autoplay loop></audio> -->
+    <!-- <audio src="./sound/4_Pop sound effect.mp3" type="audio/mp3" autoplay loop></audio> -->
+
+    <script>
+      $(document).ready(function () {
+          $audio1 = new
+          Audio('./sound/4_SE_Tandoor_bubble.mp3');
+          $audio1.play();
+          $audio1.volume = 0.2;
+          $audio1.loop = true;
+
+          $audio2 = new
+          Audio('./sound/4_Pop sound effect.mp3');
+          $audio2.play();
+          $audio2.loop = true;
+
+          $audio = new
+          Audio('./sound/5_Bubble Pop Sound Effect.mp3');
+          $count = 0;
+
+          $('.bubble').click(function () {
+            $(this).css({ 'visibility': 'hidden' });
+            $count += 1;
+
+            if ($count === 7) {
+              $audio1.pause();
+              $audio2.pause();
+              $('body').addClass('on');
+              $('.wagafi').css({ 'display': 'block', 'z-index': 100 });
+              $audio.play();
+              $('.next_btn').delay(500).queue(function (next) {
+                $(this).css({ 'display': 'block' });
+                next();
+              });
+            }
+
+            return false;
+          });
+        });
+    </script>
+</body>
+</html>

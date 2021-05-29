@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 5</title>
+  <link rel="stylesheet" href="./step5.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bread bread1"></div>
+    <div class="bread bread2"></div>
+    <div class="bread bread3"></div>
+    <div class="bread bread4"></div>
+    <p class="txt">CLEAR!</p>
+  </div>
+  <!-- <audio src="./sound/6_SE_eating_cut.mp3" tyope="audio/mp3" autoplay></audio> -->
+
+  <script>
+    $(document).ready(function () {
+      $audio1 = new
+      Audio('./sound/6_SE_eating_cut.mp3');
+      
+      $('.bread1').click(function(){
+        $audio1.play();
+        $(this).hide();
+        $('.bread2').show();
+        return false;
+      });
+
+      $('.bread2').click(function(){
+        $(this).hide();
+        $('.bread3').show();
+        return false;
+      });
+
+      $('.bread3').click(function(){
+        $(this).hide();
+        $('.bread4').show();
+        return false;
+      });
+
+      $('.bread4').click(function(){
+        $(this).hide();
+        $('.txt').show();
+        return false;
+      });
+
+      // $('.bread1').animate({ 'opacity': 0 }, 2000);
+
+      // $('.bread2').animate({ 'opacity': 1 }, 2000);
+      // $('.bread2').animate({ 'opacity': 0 }, 2000);
+
+      // $('.bread3').delay(2000).animate({ 'opacity': 1 }, 2000);
+      // $('.bread3').animate({ 'opacity': 0 }, 2000);
+
+      // $('.bread4').delay(4000).animate({ 'opacity': 1 }, 2000);
+      // $('.bread4').animate({ 'opacity': 0 }, 2000);
+      });
+  </script>
+</body>
+</html>
