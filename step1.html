@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <title>Step 1</title>
   <link rel="stylesheet" href="./step1.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -14,10 +14,16 @@
     <img src="./img/1_BG.png" alt="background" class="bg_img">
     <div class="here"></div>
   </div>
-  <audio src="./sound/1_SE_Background_cut.mp3" tyope="audio/mp3" autoplay loop></audio>
+  <!-- <audio src="./sound/1_Background_change.mp3" type="audio/mp3" autoplay loop></audio> -->
 
   <script>
     $(document).ready(function(){
+      $audio1 = new
+      Audio('./sound/1_Background_change.mp3');
+      $audio1.play();
+      $audio1.volume = 0.1;
+      $audio1.loop = true;
+
       $('.direction').delay(3000).fadeIn();
 
       $('.here').click(function(){
